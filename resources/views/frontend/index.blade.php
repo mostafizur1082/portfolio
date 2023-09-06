@@ -1,5 +1,8 @@
 @extends('frontend.main')
 
+@section('title')
+Mostafizur
+@endsection
 @section('content')
 
   <!-- banner-area -->

@@ -1,5 +1,7 @@
 @extends('frontend.main')
-
+@section('title')
+Portfolio||Mostafizur
+@endsection
 @section('content')
 
 <!-- breadcrumb-area -->

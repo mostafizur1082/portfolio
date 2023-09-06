@@ -1,4 +1,11 @@
-<header>
+@php
+$route = Route::current()->getName();
+$currenturl =  url()->current();
+@endphp    
+
+
+
+    <header>
             <div id="sticky-header" class="menu__area transparent-header">
                 <div class="container custom-container">
                     <div class="row">
@@ -12,24 +19,24 @@
                                        
                                     </div>
                                     
-                                    <div class="navbar__wrap main__menu d-none d-xl-flex">
-                                        <ul class="navigation">
-                                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                            <li><a href="{{ route('about') }}">About</a></li>
-                                            <li class="menu-item-has-children"><a href="{{ route('portfolio') }}">Portfolio</a>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="{{ route('blog') }}"> Blog</a>
-                                            </li>
-                                            <li><a href="{{ route('contact') }}">contact me</a></li>
-                                            @guest
-                                            <li><a href="{{ route('login') }}">Login</a></li>
-                                            <li><a href="{{ route('register') }}">Register</a></li>
-                                            @else
-                                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                                            @endguest
+            <div class="navbar__wrap main__menu d-none d-xl-flex">
+                <ul class="navigation">
+                    <li class="{{ ($currenturl == '/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="{{ ($route == 'about') ? 'active' : '' }}"><a href="{{ route('about') }}">About</a></li>
+                    <li class="{{ ($route == 'portfolio') ? 'active' : '' }}"><a href="{{ route('portfolio') }}">Portfolio</a>
+                    </li>
+                    <li class="{{ ($route == 'blog') ? 'active' : '' }}"><a href="{{ route('blog') }}"> Blog</a>
+                    </li>
+                    <li class="{{ ($route == 'contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">contact me</a></li>
+                    @guest
+                    <li class="{{ ($route == 'login') ? 'active' : '' }}"><a href="{{ route('login') }}">Login</a></li>
+                    <li class="{{ ($route == 'register') ? 'active' : '' }}"><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                    <li class="{{ ($route == 'dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    @endguest
 
-                                        </ul>
-                                    </div>
+                </ul>
+            </div>
                                     <div class="header__btn d-none d-md-block">
                                         <a href="contact.html" class="btn">Contact me</a>
                                     </div>
