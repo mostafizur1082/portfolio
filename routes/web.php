@@ -4,6 +4,8 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HomeSlideController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\ProfileController;
@@ -89,6 +91,8 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('update/portfolio/{id}', 'UpdatePortfolio')->name('update.portfolio');
     Route::get('delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+    Route::get('portfolio', 'Portfolio')->name('portfolio');
+
 });
 
 Route::controller(BlogCategoryController::class)->group(function(){
@@ -111,6 +115,19 @@ Route::controller(BlogController::class)->group(function(){
      Route::get('blog/details/{id}', 'BlogDetails')->name('blog.details');
      Route::get('category/blog/{id}', 'CategoryBlog')->name('category.blog');
      Route::get('blog', 'Blog')->name('blog');
+});
+
+
+Route::controller(FooterController::class)->group(function(){
+    Route::get('all/footer/', 'AllFooter')->name('all.footer');
+    Route::post('update/footer/', 'UpdateFooter')->name('update.footer');
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('contact/', 'Contact')->name('contact');
+    Route::post('store/message/', 'StoreMessage')->name('store.message');
+    Route::get('contact/message/', 'ContactMessage')->name('contact.message');
+    Route::get('delete/message/{id}', 'DeleteMessage')->name('delete.message');
 });
 
 

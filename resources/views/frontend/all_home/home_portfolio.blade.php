@@ -36,7 +36,7 @@ $allportfolio = App\Models\Portfolio::all();
                                             </div>
                                             <div class="portfolio__overlay__content">
                                                 <span>{{ $portfolio->name }}</span>
-                                                <h4 class="title"><a href="portfolio-details.html">{{ $portfolio->title }}</a></h4>
+                                                <h4 class="title"><a href="{{ route('portfolio.details', $portfolio->id) }}">{{ $portfolio->title }}</a></h4>
                                                 <a href="{{ route('portfolio.details', $portfolio->id) }}" class="link">Case Study</a>
                                             </div>
                                         </div>

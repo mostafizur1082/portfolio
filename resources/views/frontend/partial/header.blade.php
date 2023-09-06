@@ -16,16 +16,18 @@
                                         <ul class="navigation">
                                             <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                             <li><a href="{{ route('about') }}">About</a></li>
-                                            <li><a href="services-details.html">Services</a></li>
-                                            <li class="menu-item-has-children"><a href="#">Portfolio</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                </ul>
+                                            <li class="menu-item-has-children"><a href="{{ route('portfolio') }}">Portfolio</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="{{ route('blog') }}">Our Blog</a>
+                                            <li class="menu-item-has-children"><a href="{{ route('blog') }}"> Blog</a>
                                             </li>
-                                            <li><a href="contact.html">contact me</a></li>
+                                            <li><a href="{{ route('contact') }}">contact me</a></li>
+                                            @guest
+                                            <li><a href="{{ route('login') }}">Login</a></li>
+                                            <li><a href="{{ route('register') }}">Register</a></li>
+                                            @else
+                                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                            @endguest
+
                                         </ul>
                                     </div>
                                     <div class="header__btn d-none d-md-block">

@@ -104,4 +104,11 @@ class PortfolioController extends Controller
         $multiImage = MultiImage::latest()->take(6)->get();
         return view('frontend.all_home.portfolio_details',compact('Details','multiImage'));
     }
+
+    public function Portfolio(){
+
+        $allportfolio = Portfolio::latest()->get();
+        $multiImage = MultiImage::latest()->take(6)->get();
+        return view('frontend.pages.portfolio',compact('allportfolio','multiImage'));
+    }
 }
