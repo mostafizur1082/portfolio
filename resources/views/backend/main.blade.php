@@ -36,6 +36,12 @@
         {{-- sweetalert --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+        {{-- tags input --}}
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" >
+
+   
+
     </head>
 
     <body data-topbar="dark">
@@ -146,6 +152,7 @@
 <script src="{{asset('backend')}}/assets/js/pages/form-editor.init.js"></script>
 </body>
 
-
+{{-- tags input --}}
+<script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
 
 </html>
