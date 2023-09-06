@@ -43,6 +43,19 @@
                             </li>
 
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-mail-send-line"></i>
+                                    <span>About Setup</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('about.page') }}">About Content</a></li>
+                                    <li><a href="{{ route('about.multi.image') }}">About Multi Images</a></li>
+                                    <li><a href="{{ route('all.multi.image') }}">All Multi Images</a></li>
+                                </ul>
+                            </li>
+
+
                             
 
                         </ul>

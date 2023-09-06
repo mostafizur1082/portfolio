@@ -33,6 +33,9 @@
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
+        {{-- sweetalert --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     </head>
 
     <body data-topbar="dark">
@@ -131,6 +134,18 @@
  }
  @endif 
 </script>
-    </body>
+
+{{-- sweetalert --}}
+<script src="{{ asset('backend/assets/js/code.js') }}"></script>
+{{-- form editor --}}
+
+<!--tinymce js-->
+<script src="{{asset('backend')}}/assets/libs/tinymce/tinymce.min.js"></script>
+
+ <!-- init js -->
+<script src="{{asset('backend')}}/assets/js/pages/form-editor.init.js"></script>
+</body>
+
+
 
 </html>

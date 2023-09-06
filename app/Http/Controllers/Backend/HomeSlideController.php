@@ -67,7 +67,7 @@ class HomeSlideController extends Controller
         $save_url = 'upload/home_sliders/'.$name_gen;
         $home_slider['slider_img'] = $save_url;
     }
-    
+
     $home_slider->save();
 
     $notification = array(
@@ -77,5 +77,22 @@ class HomeSlideController extends Controller
 
        return redirect()->route('home.slider')->with($notification);
    
+    }
+
+    public function DeleteHomeSlide($id){
+
+        $slide = HomeSlide::findOrFail($id);
+        $image = $slide->slider_img;
+        unlink($image);
+
+        HomeSlide::findOrFail($id)->delete();
+
+        $notification = array(
+        'message' => 'Home Slide Delete Successfully',
+        'alert-type' => 'success'
+       );
+
+       return redirect()->back()->with($notification);
+
     }
 }
