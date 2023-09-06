@@ -22,6 +22,13 @@ class HomeSlideController extends Controller
 
    public function StoreHomeSlide(Request $request){
 
+    $request->validate([
+            'title' => 'required',
+            'short_title' => 'required',
+            'video_url' => 'required',
+            'slider_img' => 'required',
+        ]);
+
     if ($request->file('slider_img')) {
 
         $image = $request->file('slider_img');
